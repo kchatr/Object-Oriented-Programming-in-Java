@@ -102,6 +102,7 @@ public class Main {
 		// Instantiating the objects. The new keyword is used to declare an object of a class.
 		Main superObject = new Main();
 		Main superObject2 = new Main("Superclass");
+		Main superObject3 = new Subclass();
 		Subclass subObject = new Subclass();
 		
 		System.out.print("\n");
@@ -121,6 +122,14 @@ public class Main {
 		 * the greeting() method is called. 
 		 * Static binding (compile time polymorphism) is also demonstrated by the superObject2, calling
 		 * the overloaded greeting(int num) method.
+		 * */
+		
+		System.out.print("Superclass greeting with subclass object: "); 
+		superObject3.greeting();
+		System.out.print("\n");
+		/**
+		 * Even though the variable superObject3 is saved as a variable of Main, it references Subclass.
+		 * Hence, at compile time, the subclasse's overriden greeting() method is called.
 		 * */
 	}
 
