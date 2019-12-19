@@ -90,13 +90,38 @@ public class Main {
 	public void greeting() {
 		System.out.println("Hi!");
 	}
+	
+	public void greeting(int num) {
+		System.out.println(num);
+	}
 
 
 
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		// Instantiating the objects. The new keyword is used to declare an object of a class.
+		Main superObject = new Main();
+		Main superObject2 = new Main("Superclass");
+		Subclass subObject = new Subclass();
+		
+		System.out.print("\n");
+		System.out.print("Superclass greeting: "); 
+		superObject.greeting();
+		System.out.print("\n");
+		
+		System.out.print("Superclass greeting (2): "); 
+		superObject2.greeting(19);
+		System.out.print("\n");
+		
+		System.out.print("Subclass greeting: "); 
+		subObject.greeting();
+		System.out.print("\n");
+		/**
+		 * As we can see, dynamic binding (method overriding) occurs and the subclass's version of 
+		 * the greeting() method is called. 
+		 * Static binding (compile time polymorphism) is also demonstrated by the superObject2, calling
+		 * the overloaded greeting(int num) method.
+		 * */
 	}
 
 }
